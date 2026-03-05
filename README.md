@@ -1,27 +1,109 @@
-# VentaFrontend
+# Telco Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+Aplicación frontend desarrollada con **Angular 18** para el sistema de ventas Telco. Incluye autenticación, protección de rutas e interceptores para manejo de requests HTTP.
 
-## Development server
+## 📋 Requisitos Previos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Antes de iniciar, asegúrate de tener instalado:
 
-## Code scaffolding
+- **Node.js** (versión 18 o superior)
+- **npm** (viene incluido con Node.js)
+- **Git**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Puedes verificar tus versiones con:
+```bash
+node --version
+npm --version
+git --version
+```
 
-## Build
+## 🚀 Instalación y Setup Inicial
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 1. Clonar el Repositorio desde GitHub
 
-## Running unit tests
+```bash
+git clone https://github.com/cesarch23/TelcoFrontend.git
+cd TelcoFrontend
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 2. Instalar Dependencias
 
-## Running end-to-end tests
+```bash
+npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Este comando descargará todas las dependencias necesarias del proyecto, incluyendo Angular, Material Design y sus herramientas de desarrollo.
 
-## Further help
+### 3. Iniciar el Servidor de Desarrollo
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm start
+```
+
+O de forma alternativa:
+```bash
+ng serve
+```
+
+La aplicación estará disponible en: **http://localhost:4200/**
+
+El servidor se reiniciará automáticamente cuando detecte cambios en los archivos.
+
+ 
+
+## 🏗️ Estructura del Proyecto
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── dashboard/      # Componente de dashboard
+│   │   ├── login/          # Componente de login
+│   │   └── unauthorized/   # Componente de acceso denegado
+│   ├── guards/
+│   │   └── auth.guard.ts   # Guard de protección de rutas
+│   ├── interceptors/
+│   │   └── auth.interceptor.ts  # Interceptor para autenticación
+│   ├── services/
+│   │   └── auth.service.ts      # Servicio de autenticación
+│   └── app-routing/        # Configuración de rutas
+├── public/                 # Recursos estáticos
+└── index.html              # Página principal
+```
+
+## 🔐 Características de Seguridad
+
+- **Auth Guard**: Protege las rutas autenticadas
+- **Auth Interceptor**: Maneja automáticamente los tokens de autenticación en los requests HTTP
+- **Auth Service**: Centraliza la lógica de autenticación
+
+ 
+
+## 📦 Build para Producción
+
+Para compilar la aplicación para producción:
+
+```bash
+npm build
+```
+
+Los archivos compilados estarán en la carpeta `dist/venta-frontend/`.
+
+## 🌐 Dependencias Principales
+
+- **@angular/core** ^18.2.0 - Framework principal
+- **@angular/material** ^18.2.14 - Componentes UI
+- **@angular/router** ^18.2.0 - Sistema de enrutamiento
+- **@angular/forms** ^18.2.0 - Manejo de formularios
+- **rxjs** ~7.8.0 - Programación reactiva
+- **typescript** ~5.5.2 - Lenguaje de programación
+
+## 🐛 Solución de Problemas
+
+### Errores de dependencias
+```bash
+rm -rf node_modules package-lock.json
+npm install
+```
+## Uso de la aplicación
+- Para el login usar la credenciales de prueba del backend
